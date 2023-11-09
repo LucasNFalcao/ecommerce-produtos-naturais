@@ -2,20 +2,16 @@ import { Image, StyleSheet, View } from 'react-native'
 
 import TextComponent from '../../../../src/componentes/TextComponent'
 
-import logo from '../../../../assets/logo.png'
-
-export default function Detalhes() {
+export default function Detalhes({ nome, logoFazenda, nomeFazenda, descricao, preco }) {
   return (
     <>
-      <TextComponent style={detalhesStyles.nome}>Cesta de Verduras</TextComponent>
+      <TextComponent style={detalhesStyles.nome}>{nome}</TextComponent>
       <View style={detalhesStyles.fazenda}>
-        <Image source={logo} style={detalhesStyles.imagemFazenda} />
-        <TextComponent style={detalhesStyles.nomeFazenda}>Jenny Jack Farm</TextComponent>
+        <Image source={logoFazenda} style={detalhesStyles.imagemFazenda} />
+        <TextComponent style={detalhesStyles.nomeFazenda}>{nomeFazenda}</TextComponent>
       </View>
-      <TextComponent style={detalhesStyles.descricao}>
-        Uma cesta com produtos selecionados cuidadosamente da fazenda direto para sua cozinha
-      </TextComponent>
-      <TextComponent style={detalhesStyles.preco}>R$ 40,00</TextComponent>
+      <TextComponent style={detalhesStyles.descricao}>{descricao}</TextComponent>
+      <TextComponent style={detalhesStyles.preco}>{preco}</TextComponent>
     </>
   )
 }
